@@ -1,0 +1,13 @@
+.p{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+.k{
+    color:purple !important;
+}
+.k svg{
+    margin-top: 20px;
+    font-size: 30px;
+}
