@@ -1,13 +1,13 @@
-.p{
+.inputContainer{
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items:center;
 }
-.k{
+.iconContainer{
     color:purple !important;
 }
-.k svg{
+.iconContainer svg{
     margin-top: 20px;
     font-size: 30px;
 }
