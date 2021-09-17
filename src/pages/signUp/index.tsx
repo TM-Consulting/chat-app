@@ -1,11 +1,5 @@
 import SignUpContainer from "../../containers/signUp";
 
-const index = () => {
-  return (
-    <div>
-      <SignUpContainer />
-    </div>
-  );
-};
+const index = () => <SignUpContainer />;
 
-export default index
+export default index;
