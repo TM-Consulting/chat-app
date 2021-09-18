@@ -7,7 +7,6 @@ import ListItem from "@material-ui/core/ListItem";
 import { customGridProps } from "../../constant";
 import { styles } from "../../constant";
 import CustomGrid from "../../components/CustomGrid";
-import { textAlign } from "@mui/system";
 const useStyles = makeStyles({ ...styles });
 
 const ChatBody = () => {
@@ -16,14 +15,12 @@ const ChatBody = () => {
     <div>
       <Grid item xs={9}>
         <List className={classes.messageArea}>
-        
-            <CustomGrid {...customGridProps.default ,style={textAlign:"right"}}  />
-         
-            <CustomGrid {...customGridProps.firstmsg ,style={textAlign:"left"}} />
-         
+          {customGridProps.map((item) => (
+            <CustomGrid {...item} />
+          ))}
         </List>
         <Divider />
-           </Grid>
+      </Grid>
     </div>
   );
 };
