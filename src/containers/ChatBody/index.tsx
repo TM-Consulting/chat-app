@@ -12,16 +12,11 @@ const useStyles = makeStyles({ ...styles });
 const ChatBody = () => {
   const classes = useStyles();
   return (
-    <div>
-      <Grid item xs={9}>
-        <List className={classes.messageArea}>
-          {customGridProps.map((item) => (
-            <CustomGrid {...item} />
-          ))}
-        </List>
-        <Divider />
-      </Grid>
-    </div>
+    <List className={classes.messageArea}>
+      {customGridProps.map((item) => (
+        <CustomGrid {...item} />
+      ))}
+    </List>
   );
 };
 export default ChatBody;
