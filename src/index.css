@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,54 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --breakpoint-xs: 0px;
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 960px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1920px;
+}
+
+.fluid__vh {
+  height: 100vh;
+}
+
+.fluid__ph {
+  height: 100%;
+}
+
+.fluid__pw {
+  width: 100%;
+}
+
+.image__cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overflow__hidden {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.padding__none {
+  padding: 0 !important;
+}
+
+.blur__in {
+  filter: blur(5px);
+}
+
+.blur__out {
+  filter: blur(0px);
+  transition: filter 800ms ease 0s;
+}
+
+@media screen and (max-width: 600px) {
+  /* var(--breakpoint-sm) will not work here use :root as refrence */
+  .hide__onSm {
+    display: none !important;
+  }
 }

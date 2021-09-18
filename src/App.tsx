@@ -1,12 +1,20 @@
-import React from 'react';
-import './App.css';
-import ChatBody from './containers/ChatBody';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import SignIn from "./pages/signIn";
+import SignUp from "./pages/signUp";
 
 function App() {
   return (
-    <div className="App">
-      <ChatBody/>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <SignIn />
+        </Route>
+        <Route path="/sign-up">
+          <SignUp />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
