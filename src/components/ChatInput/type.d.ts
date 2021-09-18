@@ -1,10 +1,12 @@
-interface CustomChatInput{
-    htmlFor : string,
-    label : string,
-    id : string;
-    placeholder : string,
+interface ChatInputProps{
+    id:string,
+    label ?: string,
+    fullWidth ?: boolean,
+    color ?: PropTypes.color,
+    ariaLabel ?: string,
+    styles ?: any
     value : string,
-    onChange : (e)=>void,
     onClick : (e)=>void,
+    onChange : (e)=>void,
     
 }

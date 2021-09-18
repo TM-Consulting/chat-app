@@ -1,35 +1,39 @@
-import FormControl from "@material-ui/core/FormControl";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
+import Fab from "@material-ui/core/Fab";
+
+import SendIcon from "@material-ui/icons/Send";
 import "./index.css";
 import { chatInputProps } from "../../constants";
 
 const index = ({
-  htmlFor = chatInputProps.htmlFor,
-  label = chatInputProps.label,
-  id = chatInputProps.id,
-  placeholder = chatInputProps.placeholder,
-  value,
+  styles,
+  id,
+  label,
+  fullWidth,
+  color,
+  ariaLabel,
   onChange,
   onClick,
-}: CustomChatInput) => {
+  value,
+}: ChatInputProps) => {
   return (
-    <div className="inputContainer">
-      <FormControl>
-        <InputLabel htmlFor={htmlFor}>{label}</InputLabel>
-        <Input
-          id={id}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-        />
-      </FormControl>
-      <section className="iconContainer">
-        <PlayCircleFilledIcon onClick={onClick} />
-      </section>
-    </div>
+      <Grid container style={{...styles.inputStyle }}>
+        <Grid item xs={11}>
+          <TextField id={id} label={label} fullWidth={fullWidth} onChange={onChange} value={value} />
+        </Grid>
+        <Grid xs={1} style={{ ...styles.buttonStyle }}>
+          <Fab color={color} aria-label={ariaLabel} onClick={onClick} id={id} >
+            <SendIcon />
+          </Fab>
+        </Grid>
+      </Grid>
+
   );
 };
+
+index.defaultProps = {
+  ...chatInputProps,
+}
 
 export default index;

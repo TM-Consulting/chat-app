@@ -1,7 +1,16 @@
 export const chatInputProps = {
-    htmlFor : "component-simple",
-    label : "Type something",
-    id : "component-simple",
-    placeholder:"enter your text",
-    
+    id:"outlined-basic-email",
+    label: "TypeSomething",
+    color: "primary",
+    ariaLabel : "add",
+    fullWidth: true,
+    value:"",
+    styles : {
+        inputStyle : {
+            padding: "20px",
+        },
+        buttonStyle :{
+            textAlign: "right",
+        }
+    }
 }
