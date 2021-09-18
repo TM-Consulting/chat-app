@@ -12,44 +12,40 @@ const ListFriends = () => {
   const classes = useStyles();
   const handlechange = () => {};
   return (
-    <div>
-      <Grid container component={Paper} className={classes.chatSection}>
-        <Grid item xs={3} className={classes.borderRight500}>
-          <List>
-            <ListItemInput
-              key={friend.key}
-              name={friend.name}
-              alt={friend.alt}
-              src={friend.src}
-              primary={friend.primary}
-              secondary={friend.secondary}
-            />
-          </List>
-          <Divider />
-          <GridTextInput
-            id={textFields.id}
-            className={classes.padding}
-            label={textFields.label}
-            fullwidth={textFields.fullWidth}
-            onchange={handlechange}
+    <Grid item xs={3} className={classes.borderRight500}>
+      <List>
+        <ListItemInput
+          key={friend.key}
+          name={friend.name}
+          alt={friend.alt}
+          src={friend.src}
+          primary={friend.primary}
+          secondary={friend.secondary}
+        />
+      </List>
+      <Divider />
+      <GridTextInput
+        id={textFields.id}
+        className={classes.padding}
+        label={textFields.label}
+        fullwidth={textFields.fullWidth}
+        onchange={handlechange}
+      />
+      <Divider />
+      <List>
+        {listFriends.map((item) => (
+          <ListItemInput
+            style={{ textAlign: textFields.alignement }}
+            key={item.key}
+            name={item.name}
+            alt={item.alt}
+            src={item.src}
+            primary={item.primary}
+            secondary={item.secondary}
           />
-          <Divider />
-          <List>
-            {listFriends.map((item) => (
-              <ListItemInput
-                style={{ textAlign: textFields.alignement }}
-                key={item.key}
-                name={item.name}
-                alt={item.alt}
-                src={item.src}
-                primary={item.primary}
-                secondary={item.secondary}
-              />
-            ))}
-          </List>
-        </Grid>
-      </Grid>
-    </div>
+        ))}
+      </List>
+    </Grid>
   );
 };
 export default ListFriends;
