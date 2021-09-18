@@ -1,18 +1,14 @@
 import ProgressiveImage from "react-progressive-graceful-image";
 
 import { AsideImageProps, SourceURL } from "./types";
-import Styles from "../../styles/common/index.module.css";
 
 const index = ({ imageURL, blurURL, alt }: AsideImageProps) => (
   <ProgressiveImage src={imageURL} placeholder={blurURL}>
-    {(src: SourceURL , loading: boolean) => (
+    {(src: SourceURL, loading: boolean) => (
       <img
-        className={[
-          Styles.fluid__ph,
-          Styles.fluid__pw,
-          Styles.image__cover,
-          loading ? Styles.blur__in : Styles.blur__out
-        ].join(" ")}
+        className={`fluid__ph fluid__pw image__cover ${
+          loading ? "blur__in" : "blur__out"
+        }`}
         src={src}
         alt={alt}
       />
