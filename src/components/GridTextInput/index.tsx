@@ -1,11 +1,23 @@
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-
-const index=()=>{
-    return(
-<Grid item xs={12} style={{padding: '10px'}}>
-                    <TextField id="outlined-basic-email" label="Search" variant="outlined" fullWidth />
-                </Grid>
-    )
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
+import "./index.css";
+const index = ({
+  id,
+  label,
+  fullwidth,
+  className,
+  onchange,
+}: GridTextInputProps) => {
+  return (
+    <Grid item xs={12} className={className}>
+      <TextField
+        id={id}
+        label={label}
+        variant="outlined"
+        fullWidth={fullwidth}
+        onChange={onchange}
+      />
+    </Grid>
+  );
 };
 export default index;
