@@ -1,12 +1,20 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import './App.css';
-import ListFriends from './containers/ListFriends';
+import SignIn from "./pages/signIn";
+import SignUp from "./pages/signUp";
 
 function App() {
   return (
-    <div>
-      <ListFriends/>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <SignIn />
+        </Route>
+        <Route path="/sign-up">
+          <SignUp />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
