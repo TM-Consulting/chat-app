@@ -1,20 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Grid from "@material-ui/core/Grid";
 import { customGridProps } from "../../constant";
-const useStyles = makeStyles({
-  align: { textAlign: "right" },
-  messageArea: {
-    height: '70vh',
-    overflowY: 'auto'
-  }
-});
-const classes = useStyles();  return (
-    <ListItem key="1">
+
+const index = ({ text, times, key }: CustomGridProps) => {
+    return (
+    <ListItem key={key}>
       <Grid container>
         <Grid item xs={12}>
           <ListItemText primary={text}></ListItemText>

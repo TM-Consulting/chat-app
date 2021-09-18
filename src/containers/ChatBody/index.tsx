@@ -1,36 +1,30 @@
-import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Divider from "@material-ui/core/Divider";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
 import { customGridProps } from "../../constant";
+import { styles } from "../../constant";
 import CustomGrid from "../../components/CustomGrid";
-const useStyles = makeStyles({
-  messageArea: {
-    height: '70vh',
-    overflowY: 'auto'
-  }
-});
-const index = () => {
- const classes = useStyles();
+import { textAlign } from "@mui/system";
+const useStyles = makeStyles({ ...styles });
+
+const ChatBody = () => {
+  const classes = useStyles();
   return (
     <div>
       <Grid item xs={9}>
         <List className={classes.messageArea}>
-          <ListItem key="1">
-            <CustomGrid {...customGridProps.default}/>
-          </ListItem>
-          <ListItem key="2">
-            <CustomGrid {...customGridProps.firstmsg} />
-          </ListItem>
-        </List>
         
-
+            <CustomGrid {...customGridProps.default ,style={textAlign:"right"}}  />
+         
+            <CustomGrid {...customGridProps.firstmsg ,style={textAlign:"left"}} />
+         
+        </List>
         <Divider />
-          <CustomGrid{...customGridProps.secondmsg}/>
-        </Grid>
-
+           </Grid>
     </div>
-  )};
-export default index;
+  );
+};
+export default ChatBody;
