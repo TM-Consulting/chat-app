@@ -1,5 +1,5 @@
-import SignInContainer from "../../containers/signIn";
-
-const index = () => <SignInContainer />;
+import SignInContainer from "../../containers/Account";
+import { AccountValue } from "../../constants";
+const index = () => <SignInContainer type={AccountValue.signIn} />;
 
 export default index;
