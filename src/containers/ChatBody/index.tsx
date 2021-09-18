@@ -4,8 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import { customGridProps } from "../../constant";
-import { styles } from "../../constant";
+import { customGridProps } from "../../constants";
+import { styles } from "../../constants";
 import CustomGrid from "../../components/CustomGrid";
 const useStyles = makeStyles({ ...styles });
 
