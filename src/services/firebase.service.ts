@@ -1,7 +1,7 @@
 import firebase from "../firebase";
-
+import { firebaseAuth } from "../firebase";
  
-export const FirebaseProfile=(provider:any)=> {
+export const FirebaseProfile=(provider:string)=> {
   const db = firebase.ref(provider);
     return {
        getAll : () => {
@@ -18,5 +18,32 @@ export const FirebaseProfile=(provider:any)=> {
       },
     }    
 };
+export const authServise = () => {
+  const auth = firebaseAuth;
+  const signUp = async (email:string, password:string) => {
+    try {
+      const res = await auth.createUserWithEmailAndPassword(email, password);
+      return res.user;
+    } catch (err:any) {
 
+
+      return err.message
+    }
+  };
+  const signIn = async (email:string, password:string) => {
+    try {
+      await auth.signInWithEmailAndPassword(email, password).then(() => {
+        return auth.currentUser
+      });
+    } catch (err:any) {
+
+      return err.message;
+    }
+  };
+  const logout = () => {
+    auth.signOut();
+  };
+
+  return { signIn, signUp, logout }
+};
  
