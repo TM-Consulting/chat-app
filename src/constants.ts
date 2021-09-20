@@ -45,3 +45,5 @@ export enum AccountValue {
   signIn = "signIn",
   signUp = "signUp",
 }
+
+export const chatCollectionName = "chats";
