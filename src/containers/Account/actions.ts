@@ -1,22 +1,67 @@
-import { actionsTypes } from "./constants";
+import { ActionsTypes } from "./constants";
 
-export const userLogin = (payload: {}) => {
+const requestSignIn = () => {
   return {
-    type: actionsTypes.USER_LOGIN,
+    type: ActionsTypes.REQUEST_SIGN_IN,
+  };
+};
+const requestSignInSuccess = (payload: {}) => {
+  return {
+    type: ActionsTypes.REQUEST_SIGN_IN_SUCCESS,
+    payload,
+  };
+};
+const requestSignInError = (payload: {}) => {
+  return {
+    type: ActionsTypes.REQUEST_SIGN_IN_ERROR,
     payload,
   };
 };
 
-export const userLogout = (payload: {}) => {
+const requestSignUp = () => {
   return {
-    type: actionsTypes.USER_LOGOUT,
+    type: ActionsTypes.REQUEST_SIGN_UP,
+  };
+};
+const requestSignUpSuccess = (payload: {}) => {
+  return {
+    type: ActionsTypes.REQUEST_SIGN_UP_SUCCESS,
+    payload,
+  };
+};
+const requestSignUpError = (payload: {}) => {
+  return {
+    type: ActionsTypes.REQUEST_SIGN_UP_ERROR,
     payload,
   };
 };
 
-export const userSignUp = (payload: {}) => {
+const requestSignOut = () => {
   return {
-    type: actionsTypes.USER_SIGNUP,
+    type: ActionsTypes.REQUEST_SIGN_OUT,
+  };
+};
+const requestSignOutSuccess = (payload: {}) => {
+  return {
+    type: ActionsTypes.REQUEST_SIGN_OUT_SUCCESS,
     payload,
   };
+};
+const requestSignOutError = (payload: {}) => {
+  return {
+    type: ActionsTypes.REQUEST_SIGN_OUT_ERROR,
+    payload,
+  };
+};
+
+export {
+  requestSignIn,
+  requestSignInSuccess,
+  requestSignInError,
+  requestSignUp,
+  requestSignUpSuccess,
+  requestSignUpError,
+  requestSignOut,
+  requestSignOutSuccess,
+  requestSignOutError,
 };
