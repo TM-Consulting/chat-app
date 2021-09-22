@@ -1,7 +1,8 @@
 import { actionsTypes } from "./constants";
+import { AuthState } from "./types";
 
-const initialState = {
-  user: {},
+const initialState: AuthState = {
+  user: null,
 };
 
 const authReducer = (state = initialState, action: any) => {
