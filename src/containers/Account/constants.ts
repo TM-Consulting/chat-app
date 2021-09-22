@@ -7,3 +7,9 @@ export const asideImageProps = {
   blurURL: baseURL + minifyParams,
   alt: "Chat illustration - by Volodymyr Hryshchenko on Unsplash"
 };
+
+export const actionsTypes = {
+  USER_LOGIN: "USER_LOGIN",
+  USER_LOGOUT: "USER_LOGOUR",
+  USER_SIGNUP: "USER_SIGNUP",
+}
