@@ -32,7 +32,7 @@ const ListFriends = () => {
         onchange={handlechange}
       />
       <Divider />
-      <List>
+      <List style={{ height: "45vh", overflowY: "scroll" }}>
         {listFriends.map((item) => (
           <ListItemInput
             style={{ textAlign: textFields.alignement }}
