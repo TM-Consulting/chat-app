@@ -1,0 +1,5 @@
+interface CustomProgressProps {
+    color: string;
+   
+  }
+  
