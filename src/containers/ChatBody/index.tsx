@@ -17,11 +17,10 @@ const chatState = createStructuredSelector({
 
 const ChatBody = () => {
   const { loading } = useSelector(chatState);
-
-  const classes = useStyles();
+  const { messageArea } = useStyles();
 
   return (
-    <List className={classes.messageArea}>
+    <List className={messageArea}>
       {loading === true ? (
         <CustomProgress />
       ) : (
