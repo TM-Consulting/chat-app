@@ -1,3 +1,3 @@
 interface GridTextInputProps {
-  className: string;
+  className?: string;
 }

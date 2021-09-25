@@ -24,14 +24,4 @@ const setSelecterUser = (payload: {}) => {
     payload,
   };
 };
-
-
-  
-
-export {
-  requestUers,
-  requestUsersSuccess,
-  requestUsersError,
-  setSelecterUser,
-  
-};
+export { requestUers, requestUsersSuccess, requestUsersError, setSelecterUser };
