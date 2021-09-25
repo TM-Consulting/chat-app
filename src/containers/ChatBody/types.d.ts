@@ -1,5 +1,5 @@
 interface ChatState {
-  loading: boolean; 
+  loading: boolean;
   error: boolean;
   messages: Message[] | null;
 }
@@ -12,4 +12,4 @@ interface Message {
   receiverId: string;
 }
 
-export { ChatState };
+export { ChatState, Message };
