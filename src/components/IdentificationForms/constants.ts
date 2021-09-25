@@ -62,7 +62,7 @@ export const signUpDefaults: IdentificationProps = {
     label: "Confirm password *",
     placeholder: "Confirm your password...",
     type: "password",
-    name: "password",
+    name: "confirm_password",
     variant: "outlined",
     fullWidth: true,
   },

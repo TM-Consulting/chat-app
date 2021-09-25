@@ -23,6 +23,30 @@ export const listFriends = [
     primary: "Cindy Baker",
     secondary: "online",
   },
+  {
+    key: "CindyBaker",
+    name: "Cindy Baker",
+    alt: "Cindy Baker",
+    src: "https://material-ui.com/static/images/avatar/2.jpg",
+    primary: "Cindy Baker",
+    secondary: "online",
+  },
+  {
+    key: "CindyBaker",
+    name: "Cindy Baker",
+    alt: "Cindy Baker",
+    src: "https://material-ui.com/static/images/avatar/2.jpg",
+    primary: "Cindy Baker",
+    secondary: "online",
+  },
+  {
+    key: "CindyBaker",
+    name: "Cindy Baker",
+    alt: "Cindy Baker",
+    src: "https://material-ui.com/static/images/avatar/2.jpg",
+    primary: "Cindy Baker",
+    secondary: "online",
+  },
 ];
 
 export const friend = {
@@ -41,17 +65,22 @@ export const styles = {
   borderRight500: {
     borderRight: "1px solid #e0e0e0",
   },
-  padding:{
-    padding: '10px',
-  }
- 
+  padding: {
+    padding: "10px",
+  },
 };
-export const textFields={
-    id:"outlined-basic-email" ,
-    label:"Search" ,
-    variant:"outlined",
-    fullWidth:true,
-    className:"gridstyle",
-    alignement:"right",
-   
-    }
+export const textFields = {
+  id: "outlined-basic-email",
+  label: "Search",
+  variant: "outlined",
+  fullWidth: true,
+  className: "gridstyle",
+  alignement: "right",
+};
+
+export enum ActionsTypes {
+  SET_CURRENT_FRIEND = "SET_CURRENT_FRIEND",
+  REQUEST_FRIENDS_LIST = "REQUEST_FRIENDS_LIST",
+  REQUEST_FRIENDS_LIST_SUCCESS = "REQUEST_FRIENDS_LIST_SUCCESS",
+  REQUEST_FRIENDS_LIST_ERROR = "REQUEST_FRIENDS_LIST_ERROR",
+}

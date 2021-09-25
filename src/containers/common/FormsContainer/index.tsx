@@ -5,8 +5,14 @@ import IdentificationForms from "../../../components/IdentificationForms";
 import AsideImage from "../../../components/AsideImage";
 
 import { FormsContainerProps } from "./types";
-
-const index = ({ imageURL, blurURL, alt, type }: FormsContainerProps) => {
+const FormContainer = ({
+  imageURL,
+  blurURL,
+  alt,
+  type,
+  handleChange,
+  handleSubmit
+}: FormsContainerProps) => {
   return (
     <Container className="padding__none" maxWidth={false}>
       <Grid
@@ -34,11 +40,11 @@ const index = ({ imageURL, blurURL, alt, type }: FormsContainerProps) => {
           justifyContent="center"
           alignItems="center"
         >
-          <IdentificationForms type={type} />
+          <IdentificationForms type={type} handleChange={handleChange} handleSubmit={handleSubmit} />
         </Grid>
       </Grid>
     </Container>
   );
 };
 
-export default index;
+export default FormContainer;
