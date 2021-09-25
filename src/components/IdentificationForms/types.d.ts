@@ -34,4 +34,6 @@ export interface DefaultsPropsTypes {
 
 export interface ComponentProps {
   type: IdentificationTypes;
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void | any;
+  handleSubmit?: (e: React.SyntheticEvent) => void | any;
 }

@@ -23,6 +23,30 @@ export const listFriends = [
     primary: "Cindy Baker",
     secondary: "online",
   },
+  {
+    key: "CindyBaker",
+    name: "Cindy Baker",
+    alt: "Cindy Baker",
+    src: "https://material-ui.com/static/images/avatar/2.jpg",
+    primary: "Cindy Baker",
+    secondary: "online",
+  },
+  {
+    key: "CindyBaker",
+    name: "Cindy Baker",
+    alt: "Cindy Baker",
+    src: "https://material-ui.com/static/images/avatar/2.jpg",
+    primary: "Cindy Baker",
+    secondary: "online",
+  },
+  {
+    key: "CindyBaker",
+    name: "Cindy Baker",
+    alt: "Cindy Baker",
+    src: "https://material-ui.com/static/images/avatar/2.jpg",
+    primary: "Cindy Baker",
+    secondary: "online",
+  },
 ];
 
 export const friend = {
