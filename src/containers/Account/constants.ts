@@ -9,6 +9,16 @@ export const asideImageProps = {
   alt: "Chat illustration - by Volodymyr Hryshchenko on Unsplash",
 };
 
+export const formFields = {
+  name: "name",
+  email: "email",
+  password: "password",
+  confirm_password: "confirm_password",
+}
+
+export const FORM_FIELDS_ERROR = "Error, please fill the missing fields";
+export const FORM_FIELDS_SUCCESS = "Success, you will be redirected in few seconds";
+
 export enum ActionsTypes {
   REQUEST_SIGN_UP = "REQUEST_SIGN_UP",
   REQUEST_SIGN_UP_SUCCESS = "REQUEST_SIGN_UP_SUCCESS",
@@ -21,4 +31,6 @@ export enum ActionsTypes {
   REQUEST_SIGN_OUT = "REQUEST_SIGN_OUT",
   REQUEST_SIGN_OUT_SUCCESS = "REQUEST_SIGN_OUT_SUCCESS",
   REQUEST_SIGN_OUT_ERROR = "REQUEST_SIGN_OUT_ERROR",
+
+  SET_FORM_DATA = "SET_FORM_DATA",
 }
