@@ -1,5 +1,3 @@
 interface CustomProgressProps {
-    color: string;
-   
-  }
-  
+  text: string;
+}
