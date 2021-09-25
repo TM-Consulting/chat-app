@@ -3,7 +3,6 @@ import List from "@material-ui/core/List";
 import { listFriends, friend, styles } from "./constants";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-import Paper from "@material-ui/core/Paper";
 import GridTextInput from "../../components/GridTextInput";
 import { textFields, customButtonProps } from "./constants";
 import { makeStyles } from "@material-ui/core/styles";
@@ -39,8 +38,9 @@ const ListFriends = () => {
         id={textFields.id}
         className={classes.padding}
         label={textFields.label}
-        fullwidth={textFields.fullWidth}
-        onchange={handlechange}
+        fullWidth={textFields.fullWidth}
+        onChange={handlechange}
+        variant="outlined"
       />
       <Divider />
       <List style={{ height: "45vh", overflowY: "scroll" }}>

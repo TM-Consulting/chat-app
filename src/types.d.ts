@@ -16,4 +16,5 @@ interface GlobalState {
   friends: FriendsState;
   dialog:DialogState
 }
+
 export { User, GlobalState };

@@ -11,7 +11,7 @@ import "./index.css";
 
 const { signUp } = componentTypes;
 
-const index = ({ type }: ComponentProps) => {
+const index = ({ type, handleChange, handleSubmit }: ComponentProps) => {
   const {
     title,
     fullname,
@@ -27,11 +27,13 @@ const index = ({ type }: ComponentProps) => {
   return (
     <div className="form__wrapper">
       <FormHeader title={title} />
-      <form>
-        {isSignUp && <TextField {...fullname} />}
-        <TextField {...email} />
-        <TextField {...password} />
-        {isSignUp && <TextField {...confirm_password} />}
+      <form onSubmit={handleSubmit}>
+        {isSignUp && <TextField {...fullname} onChange={handleChange} />}
+        <TextField {...email} onChange={handleChange} />
+        <TextField {...password} onChange={handleChange} />
+        {isSignUp && (
+          <TextField {...confirm_password} onChange={handleChange} />
+        )}
         {!isSignUp && (
           <FormControlLabel
             control={<Checkbox {...checkbox} />}
@@ -54,6 +56,6 @@ const index = ({ type }: ComponentProps) => {
 };
 
 export { componentTypes };
-export type { IdentificationTypes }
+export type { IdentificationTypes };
 
 export default index;
