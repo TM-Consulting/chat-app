@@ -6,7 +6,7 @@ const initialState: DialogState = {
   loading: true,
   error: false,
   users: null,
-  selectedUser:null,
+  selectedUser: null,
 };
 
 const dialogReducer = (state = initialState, action: any) => {
@@ -15,13 +15,13 @@ const dialogReducer = (state = initialState, action: any) => {
       return "";
     case ActionsTypes.REQUEST_USERS_LIST_ERROR:
       return "";
-      case ActionsTypes.SET_SELECTED_USER:
-        return "";
-        case ActionsTypes.SET_OPEN_DIALOG:
-        return {
-          ...state,
-          open:action.payload,
-        };
+    case ActionsTypes.SET_SELECTED_USER:
+      return "";
+    case ActionsTypes.SET_OPEN_DIALOG:
+      return {
+        ...state,
+        open: action.payload,
+      };
     default:
       return state;
   }

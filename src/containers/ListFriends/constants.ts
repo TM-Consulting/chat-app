@@ -68,9 +68,9 @@ export const styles = {
   padding: {
     padding: "10px",
   },
-  centrer:{
-    marginLeft:"100px",
-    marginTop:"50px",
+  centrer: {
+    marginLeft: "100px",
+    marginTop: "50px",
   },
 };
 export const textFields = {
@@ -88,7 +88,7 @@ export enum ActionsTypes {
   REQUEST_FRIENDS_LIST_SUCCESS = "REQUEST_FRIENDS_LIST_SUCCESS",
   REQUEST_FRIENDS_LIST_ERROR = "REQUEST_FRIENDS_LIST_ERROR",
 }
-export const customButtonProps={
-  color:'"inherit" | "primary" | "secondary" | "default" | undefined',
-  text:"add friend",
-}
+export const customButtonProps = {
+  color: '"inherit" | "primary" | "secondary" | "default" | undefined',
+  text: "add friend",
+};

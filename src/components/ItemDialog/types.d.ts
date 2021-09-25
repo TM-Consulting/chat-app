@@ -1,5 +1,3 @@
-  
-
 interface CustomDialogProps {
   key: string;
   primary: string;

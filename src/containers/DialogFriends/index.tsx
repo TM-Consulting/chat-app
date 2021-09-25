@@ -13,14 +13,12 @@ const DialogState = createStructuredSelector({
   open: makeSelectOpenDialog(),
   loading: makeSelectLoading(),
 });
-
-
 const DialogFriends = () => {
   const dispatch = useDispatch();
-  const { open,loading } = useSelector(DialogState);
+  const { open, loading } = useSelector(DialogState);
   const handleClose = () => {
     dispatch(setOpenDialog(false));
-  }
+  };
   return (
     <CustomDialog
       ariaLabelledby={customDialogProps.ariaLabelledby}
@@ -36,12 +34,13 @@ const DialogFriends = () => {
           variant="outlined"
         />
         <div className="users-list">
-          {loading===true? (
-            <CustomProgress />
-          ):(
-          listFriends.map((item: any) => (
-            <ItemDialog key={item.name} primary={item.name} />
-          )))}
+          {loading === true ? (
+            <CustomProgress text="Loading friends" />
+          ) : (
+            listFriends.map((item: any) => (
+              <ItemDialog key={item.name} primary={item.name} />
+            ))
+          )}
         </div>
       </div>
     </CustomDialog>

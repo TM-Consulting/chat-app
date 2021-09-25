@@ -17,11 +17,10 @@ const makeSelectError = () =>
   );
 
 const makeSelectUsers = () =>
-  createSelector(
-    selectDialogDomain,
-    (dialogState: DialogState) => _.get(dialogState, "users", [])
+  createSelector(selectDialogDomain, (dialogState: DialogState) =>
+    _.get(dialogState, "users", [])
   );
-  const makeSelectedUser = () =>
+const makeSelectedUser = () =>
   createSelector(
     selectDialogDomain,
     (dialogState: DialogState) => _.get(dialogState, "selectedUser", {}) as User
@@ -32,12 +31,11 @@ const makeSelectUserId = () =>
     _.get(selectedUser, "id", "")
   );
 
-
 const makeSelectedUserName = () =>
   createSelector(makeSelectedUser(), (selectedUser: User) =>
     _.get(selectedUser, "name", "")
   );
-  const makeSelectLoading = () =>
+const makeSelectLoading = () =>
   createSelector(selectDialogDomain, (dialogState: DialogState) =>
     _.get(dialogState, "loading", false)
   );

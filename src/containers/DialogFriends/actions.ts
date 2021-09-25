@@ -30,4 +30,10 @@ const setOpenDialog = (payload: boolean) => {
     payload,
   };
 };
-export { requestUers, requestUsersSuccess, requestUsersError, setSelecterUser,setOpenDialog };
+export {
+  requestUers,
+  requestUsersSuccess,
+  requestUsersError,
+  setSelecterUser,
+  setOpenDialog,
+};
