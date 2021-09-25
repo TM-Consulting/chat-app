@@ -1,10 +1,22 @@
 import { GlobalState, User } from "../../types";
-import { AuthState } from "./types";
+import { AuthState, AuthFormData } from "./types";
 import { createSelector } from "reselect";
 import _ from "lodash";
 
 const selectAuthDomain = (globalState: GlobalState): AuthState =>
   globalState.auth;
+
+const makeSelectFormData = () =>
+  createSelector(
+    selectAuthDomain,
+    (authState: AuthState): AuthFormData =>
+      _.get(authState, "formData", {
+        email: null,
+        password: null,
+        name: null,
+        confirm_password: null,
+      }) as AuthFormData
+  );
 
 const makeSelectError = () =>
   createSelector(selectAuthDomain, (authState: AuthState) =>
@@ -42,6 +54,7 @@ const makeSelectCurrentUserLogged = () =>
   );
 
 export {
+  makeSelectFormData,
   makeSelectError,
   makeSelectErrorMessage,
   makeSelectCurrentUser,

@@ -14,4 +14,5 @@ interface GlobalState {
   chat: ChatState;
   friends: FriendsState;
 }
+
 export { User, GlobalState };
