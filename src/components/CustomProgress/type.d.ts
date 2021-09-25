@@ -1,0 +1,3 @@
+interface CustomProgressProps {
+  text: string;
+}
