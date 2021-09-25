@@ -64,6 +64,7 @@ export enum ActionsTypes {
   REQUEST_USERS_LIST="REQUEST_USERS_LIST",
   REQUEST_USERS_LIST_SUCCESS = "REQUEST_SIGN_UP_SUCCESS",
   REQUEST_USERS_LIST_ERROR = "REQUEST_SIGN_UP_ERROR",
+  SET_OPEN_DIALOG="SET_OPEN_DIALOG",
 }
 export const customDialogProps={
   ariaLabelledby:"simple-dialog-title" ,

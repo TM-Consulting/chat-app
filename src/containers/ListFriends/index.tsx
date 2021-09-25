@@ -11,15 +11,25 @@ import AddIcon from '@material-ui/icons/Add';
 import DialogFriends from "../DialogFriends";
 import Dialog from '@material-ui/core/Dialog';
 import { useDispatch, useSelector } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { makeSelectOpenDialog } from "../../containers/DialogFriends/selectors";
+import {setOpenDialog} from "../../containers/DialogFriends/actions"
  const useStyles = makeStyles({ ...styles });
+ const DialogState = createStructuredSelector({
+  open: makeSelectOpenDialog(),
+});
 const ListFriends = () => {
+  const dispatch = useDispatch();
+
   const classes = useStyles();
-  const open=true;
+   
 
   const handlechange = () => { 
     return ;
   };
-  const handleclick = () => {};
+  const handleclick = () => {
+    dispatch(setOpenDialog(true));
+  };
   return (
     
     <Grid item xs={3} className={classes.borderRight500}>
@@ -56,11 +66,11 @@ const ListFriends = () => {
           />
         ))}
       </List>
-     
+      
         <CustomButton className={classes.centrer} text={customButtonProps.text} color={customButtonProps.color} startIcon={<AddIcon />} onClick={handleclick}></CustomButton>
         <DialogFriends/>
     </Grid>
-
+      
   );
 };
 export default ListFriends;

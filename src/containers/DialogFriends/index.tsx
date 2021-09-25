@@ -12,11 +12,10 @@ const DialogState = createStructuredSelector({
 });
 const DialogFriends = () => {
   const { open } = useSelector(DialogState);
-  console.log("testtt", open);
   return (
     <CustomDialog
       ariaLabelledby={customDialogProps.ariaLabelledby}
-      open={customDialogProps.open}
+      open={open}
       title={customDialogProps.title}
     >
       <div>

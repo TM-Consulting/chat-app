@@ -17,6 +17,11 @@ const dialogReducer = (state = initialState, action: any) => {
       return "";
       case ActionsTypes.SET_SELECTED_USER:
         return "";
+        case ActionsTypes.SET_OPEN_DIALOG:
+        return {
+          ...state,
+          open:action.payload,
+        };
     default:
       return state;
   }
