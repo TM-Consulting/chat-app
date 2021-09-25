@@ -1,9 +1,10 @@
 import { Color } from "@material-ui/core";
+import { ReactNode } from "react";
 
-interface CustomButtonProps{
-    variant:string;
-    color?: "inherit" | "primary" | "secondary" | "default" | undefined
-    className:object;
-    startIcon:object;
-    text:string;
-};
+interface CustomButtonProps {
+  color?: color;
+  text: string;
+  startIcon: ReactNode;
+  className?: string;
+  onClick?: (e) => void;
+}

@@ -1,3 +1,4 @@
+ 
 export const listFriends = [
   {
     key: "RemySharp",
@@ -48,31 +49,6 @@ export const listFriends = [
     secondary: "online",
   },
 ];
-
-export const friend = {
-  key: "RemySharp",
-  name: "",
-  alt: "RemySharp",
-  src: "https://material-ui.com/static/images/avatar/1.jpg",
-  primary: "John Wick",
-  secondary: "",
-};
-export const styles = {
-  chatSection: {
-    width: "100%",
-    height: "100vh",
-  },
-  borderRight500: {
-    borderRight: "1px solid #e0e0e0",
-  },
-  padding: {
-    padding: "10px",
-  },
-  centrer:{
-    marginLeft:"100px",
-    marginTop:"50px",
-  },
-};
 export const textFields = {
   id: "outlined-basic-email",
   label: "Search",
@@ -81,14 +57,16 @@ export const textFields = {
   className: "gridstyle",
   alignement: "right",
 };
+ 
 
 export enum ActionsTypes {
-  SET_CURRENT_FRIEND = "SET_CURRENT_FRIEND",
-  REQUEST_FRIENDS_LIST = "REQUEST_FRIENDS_LIST",
-  REQUEST_FRIENDS_LIST_SUCCESS = "REQUEST_FRIENDS_LIST_SUCCESS",
-  REQUEST_FRIENDS_LIST_ERROR = "REQUEST_FRIENDS_LIST_ERROR",
+  SET_SELECTED_USER = "SET_SELECTED_USER",
+  REQUEST_USERS_LIST="REQUEST_USERS_LIST",
+  REQUEST_USERS_LIST_SUCCESS = "REQUEST_SIGN_UP_SUCCESS",
+  REQUEST_USERS_LIST_ERROR = "REQUEST_SIGN_UP_ERROR",
 }
-export const customButtonProps={
-  color:'"inherit" | "primary" | "secondary" | "default" | undefined',
-  text:"add friend",
+export const customDialogProps={
+  ariaLabelledby:"simple-dialog-title" ,
+  open:true,
+  title:"Find friend",
 }

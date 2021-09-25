@@ -2,6 +2,6 @@ interface GridTextInputProps {
   id: string;
   label: string;
   fullwidth: boolean;
-  className: string;
+  className?: string;
   onchange?: (e) => void;
 }
