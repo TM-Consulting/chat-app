@@ -1,21 +1,31 @@
-import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
+import { useSelector } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+
+import CustomProgress from "../../components/CustomProgress";
+import CustomGrid from "../../components/CustomGrid";
 import { customGridProps } from "../../constants";
 import { styles } from "../../constants";
-import CustomGrid from "../../components/CustomGrid";
+import { makeSelectLoading } from "./selectors";
+
 const useStyles = makeStyles({ ...styles });
 
+const chatState = createStructuredSelector({
+  loading: makeSelectLoading(),
+});
+
 const ChatBody = () => {
-  const classes = useStyles();
+  const { loading } = useSelector(chatState);
+  const { messageArea } = useStyles();
+
   return (
-    <List className={classes.messageArea}>
-      {customGridProps.map((item) => (
-        <CustomGrid {...item} />
-      ))}
+    <List className={messageArea}>
+      {loading === true ? (
+        <CustomProgress />
+      ) : (
+        customGridProps.map((item) => <CustomGrid {...item} />)
+      )}
     </List>
   );
 };
