@@ -6,5 +6,5 @@ interface ListItemInputProps {
   primary: string;
   secondary: string;
   className?: string;
-  style?:Object;
+  style?: Object;
 }

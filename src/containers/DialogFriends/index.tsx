@@ -3,21 +3,28 @@ import { listFriends, customDialogProps } from "./constants";
 import GridTextInput from "../../components/GridTextInput";
 import { textFields } from "./constants";
 import { createStructuredSelector } from "reselect";
-import { makeSelectOpenDialog } from "./selectors";
-import { useSelector } from "react-redux";
+import { makeSelectLoading, makeSelectOpenDialog } from "./selectors";
+import { useSelector, useDispatch } from "react-redux";
 import CustomDialog from "../../components/CustomDialog";
 import "./index.css";
+import { setOpenDialog } from "./actions";
+import CustomProgress from "../../components/CustomProgress";
 const DialogState = createStructuredSelector({
   open: makeSelectOpenDialog(),
+  loading: makeSelectLoading(),
 });
 const DialogFriends = () => {
-  const { open } = useSelector(DialogState);
-  console.log("testtt", open);
+  const dispatch = useDispatch();
+  const { open, loading } = useSelector(DialogState);
+  const handleClose = () => {
+    dispatch(setOpenDialog(false));
+  };
   return (
     <CustomDialog
       ariaLabelledby={customDialogProps.ariaLabelledby}
-      open={customDialogProps.open}
+      open={open}
       title={customDialogProps.title}
+      onClose={handleClose}
     >
       <div>
         <GridTextInput
@@ -27,9 +34,13 @@ const DialogFriends = () => {
           variant="outlined"
         />
         <div className="users-list">
-          {listFriends.map((item: any) => (
-            <ItemDialog key={item.name} primary={item.name} />
-          ))}
+          {loading === true ? (
+            <CustomProgress text="Loading friends" />
+          ) : (
+            listFriends.map((item: any) => (
+              <ItemDialog key={item.name} primary={item.name} />
+            ))
+          )}
         </div>
       </div>
     </CustomDialog>

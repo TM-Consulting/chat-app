@@ -4,8 +4,7 @@ interface DialogState {
   loading: boolean;
   error: boolean;
   users: User[] | null;
-  selectedUser:User | null;
+  selectedUser: User | null;
 }
 
 export { DialogState };
- 
