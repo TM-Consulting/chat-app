@@ -21,7 +21,7 @@ const DialogFriends = () => {
                     id={textFields.id}
 
                     label={textFields.label}
-                    fullwidth={textFields.fullWidth}
+                    fullWidth={textFields.fullWidth}
 
                 />
                 {listFriends.map((item: any) => (
