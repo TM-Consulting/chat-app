@@ -24,14 +24,16 @@ const setSelecterUser = (payload: {}) => {
     payload,
   };
 };
-
-
-  
-
+const setOpenDialog = (payload: boolean) => {
+  return {
+    type: ActionsTypes.SET_OPEN_DIALOG,
+    payload,
+  };
+};
 export {
   requestUers,
   requestUsersSuccess,
   requestUsersError,
   setSelecterUser,
-  
+  setOpenDialog,
 };

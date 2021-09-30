@@ -9,19 +9,28 @@ import { makeStyles } from "@material-ui/core/styles";
 import CustomButton from "../../components/CustomButton";
 import AddIcon from '@material-ui/icons/Add';
 import DialogFriends from "../DialogFriends";
-import Dialog from '@material-ui/core/Dialog';
-import { useDispatch, useSelector } from "react-redux";
- const useStyles = makeStyles({ ...styles });
+import { useDispatch } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { makeSelectOpenDialog } from "../../containers/DialogFriends/selectors";
+import { setOpenDialog } from "../../containers/DialogFriends/actions"
+const useStyles = makeStyles({ ...styles });
+const DialogState = createStructuredSelector({
+  open: makeSelectOpenDialog(),
+});
 const ListFriends = () => {
-  const classes = useStyles();
-  const open=true;
+  const dispatch = useDispatch();
 
-  const handlechange = () => { 
-    return ;
+  const classes = useStyles();
+
+
+  const handlechange = () => {
+    return;
   };
-  const handleclick = () => {};
+  const handleclick = () => {
+    dispatch(setOpenDialog(true));
+  };
   return (
-    
+
     <Grid item xs={3} className={classes.borderRight500}>
       <List>
         <ListItemInput
@@ -56,9 +65,9 @@ const ListFriends = () => {
           />
         ))}
       </List>
-     
-        <CustomButton className={classes.centrer} text={customButtonProps.text} color={customButtonProps.color} startIcon={<AddIcon />} onClick={handleclick}></CustomButton>
-        <DialogFriends/>
+
+      <CustomButton className={classes.centrer} text={customButtonProps.text} color="default" startIcon={<AddIcon />} onClick={handleclick}></CustomButton>
+      <DialogFriends />
     </Grid>
 
   );

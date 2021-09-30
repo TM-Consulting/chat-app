@@ -1,4 +1,3 @@
- 
 export const listFriends = [
   {
     key: "RemySharp",
@@ -57,16 +56,16 @@ export const textFields = {
   className: "gridstyle",
   alignement: "right",
 };
- 
 
 export enum ActionsTypes {
   SET_SELECTED_USER = "SET_SELECTED_USER",
-  REQUEST_USERS_LIST="REQUEST_USERS_LIST",
+  REQUEST_USERS_LIST = "REQUEST_USERS_LIST",
   REQUEST_USERS_LIST_SUCCESS = "REQUEST_SIGN_UP_SUCCESS",
   REQUEST_USERS_LIST_ERROR = "REQUEST_SIGN_UP_ERROR",
+  SET_OPEN_DIALOG = "SET_OPEN_DIALOG",
 }
-export const customDialogProps={
-  ariaLabelledby:"simple-dialog-title" ,
-  open:true,
-  title:"Find friend",
-}
+export const customDialogProps = {
+  ariaLabelledby: "simple-dialog-title",
+  open: true,
+  title: "Find friend",
+};

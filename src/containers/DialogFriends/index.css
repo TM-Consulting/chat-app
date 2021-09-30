@@ -1,1 +1,11 @@
- 
+.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper {
+  padding: 30px;
+}
+.MuiDialog-paper {
+  overflow-y: hidden !important;
+}
+
+.users-list {
+  overflow-y: scroll;
+  height: 50vh;
+}
