@@ -2,7 +2,7 @@ import { ActionsTypes, Routes } from "./constants";
 import { AppState } from "./types";
 
 const initialState: AppState = {
-  currentPage: Routes.SIGN_IN,
+  currentPage: Routes.CHAT,
 };
 
 const appReducer = (state = initialState, action: any) => {
