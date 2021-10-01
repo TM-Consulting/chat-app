@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { ReactChild, ReactNode, useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
@@ -9,12 +9,11 @@ import {
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createStructuredSelector } from "reselect";
-
 import Chat from "../../pages/Chat";
 import SignIn from "../../pages/SignIn";
 import SignUp from "../../pages/SignUp";
 import { makeSelectCurrentPage } from "./selectors";
-
+import ErrorBoundary from "../../components/ErrorBoundary";
 const appState = createStructuredSelector({
   currentPage: makeSelectCurrentPage(),
 });
@@ -24,20 +23,23 @@ const App = () => {
       <ToastContainer theme="colored" />
 
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/sign-in">
-            <SignIn />
-          </Route>
-          <Route path="/sign-up">
-            <SignUp />
-          </Route>
-          <Route path="/chat">
-            <Chat />
-          </Route>
-        </Switch>
+        <Home>
+          <div>
+            <Switch>
+              <Route exact path="/sign-in">
+                <ErrorBoundary key={"test"}>
+                  <SignIn />
+                </ErrorBoundary>
+              </Route>
+              <Route path="/sign-up">
+                <SignUp />
+              </Route>
+              <Route path="/chat">
+                <Chat />
+              </Route>
+            </Switch>
+          </div>
+        </Home>
       </Router>
     </>
   );
@@ -45,21 +47,14 @@ const App = () => {
 
 export default App;
 
-const Home = () => {
+const Home = ({ children }: any) => {
   const { currentPage } = useSelector(appState);
 
   const history = useHistory();
   useEffect(() => {
+    console.log("current page", currentPage);
     history.push(currentPage);
   }, [currentPage, history]);
 
-  return (
-    <div
-      style={{
-        display: "contents",
-      }}
-    >
-      <h2>WELCOME TO THE CHAT APP</h2>
-    </div>
-  );
+  return <>{children}</>;
 };

@@ -1,3 +1,8 @@
+export enum Routes {
+  SIGN_IN = "/sign-in",
+  SIGN_UP = "/sign-up",
+  CHAT = "/chat",
+}
 export const chatInputProps = {
   id: "outlined-basic-email",
   label: "TypeSomething",
@@ -47,5 +52,3 @@ export enum AccountValue {
 }
 
 export const chatCollectionName = "chats";
-
-

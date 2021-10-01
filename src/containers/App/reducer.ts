@@ -1,8 +1,9 @@
-import { ActionsTypes, Routes } from "./constants";
+import { Routes } from "../../constants";
+import { ActionsTypes } from "./constants";
 import { AppState } from "./types";
 
 const initialState: AppState = {
-  currentPage: Routes.CHAT,
+  currentPage: Routes.SIGN_IN,
 };
 
 const appReducer = (state = initialState, action: any) => {
@@ -10,7 +11,7 @@ const appReducer = (state = initialState, action: any) => {
     case ActionsTypes.SET_CURRENT_PAGE:
       return {
         ...state,
-        currentPage: action.payload.page,
+        currentPage: action.payload,
       };
 
     default:

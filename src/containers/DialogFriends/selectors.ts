@@ -17,8 +17,8 @@ const makeSelectError = () =>
   );
 
 const makeSelectUsers = () =>
-  createSelector(selectDialogDomain, (dialogState: DialogState) =>
-    _.get(dialogState, "users", [])
+  createSelector(selectDialogDomain, (dialogState: DialogState): User[] =>
+    _.get(dialogState, "users", []) as User[]
   );
 const makeSelectedUser = () =>
   createSelector(
