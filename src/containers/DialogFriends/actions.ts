@@ -1,3 +1,4 @@
+import { User } from "../../types";
 import { ActionsTypes } from "./constants";
 
 const requestUers = () => {
@@ -5,16 +6,15 @@ const requestUers = () => {
     type: ActionsTypes.REQUEST_USERS_LIST,
   };
 };
-const requestUsersSuccess = (payload: {}) => {
+const requestUsersSuccess = (payload: User[]) => {
   return {
     type: ActionsTypes.REQUEST_USERS_LIST_SUCCESS,
     payload,
   };
 };
-const requestUsersError = (payload: {}) => {
+const requestUsersError = () => {
   return {
     type: ActionsTypes.REQUEST_USERS_LIST_ERROR,
-    payload,
   };
 };
 

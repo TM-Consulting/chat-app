@@ -12,9 +12,17 @@ const initialState: DialogState = {
 const dialogReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case ActionsTypes.REQUEST_USERS_LIST_SUCCESS:
-      return "";
+      return {
+        ...state,
+        users: action.payload,
+        loading: false,
+      };
     case ActionsTypes.REQUEST_USERS_LIST_ERROR:
-      return "";
+      return {
+        ...state,
+        error: true,
+        loading: false,
+      };
     case ActionsTypes.SET_SELECTED_USER:
       return "";
     case ActionsTypes.SET_OPEN_DIALOG:

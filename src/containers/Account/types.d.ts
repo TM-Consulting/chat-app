@@ -8,10 +8,15 @@ export interface AuthState {
 }
 
 export interface AuthFormData {
-  [email: string]: string | null;
-  [password: string]: string | null;
-  [confirm_password: string]: string | null;
-  [name: string]: string | null;
+  email: string | null;
+  password: string | null;
+  confirm_password: string | null;
+  name: string | null;
+}
+interface AuthResponse {
+  error: boolean;
+  message: string;
+  data: any;
 }
 
-export { AuthState };
+export { AuthState, AuthFormData, AuthResponse };

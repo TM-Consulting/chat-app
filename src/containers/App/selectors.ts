@@ -2,7 +2,7 @@ import { GlobalState } from "../../types";
 import { AppState } from "./types";
 import { createSelector } from "reselect";
 import _ from "lodash";
-import { Routes } from "./constants";
+import { Routes } from "../../constants";
 
 const selectChatDomain = (globalState: GlobalState): AppState =>
   globalState.app;

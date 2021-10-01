@@ -7,7 +7,7 @@ import FormsContainer from "../common/FormsContainer";
 import { ComponentProps } from "../../components/IdentificationForms/types";
 import { AccountValue } from "../../constants";
 import { makeSelectFormData } from "./selectors";
-import { setFormData } from "./actions";
+import { requestSignIn, requestSignUp, setFormData } from "./actions";
 
 import {
   asideImageProps,
@@ -20,7 +20,7 @@ const authState = createStructuredSelector({
 });
 
 const Account = ({ type }: ComponentProps) => {
-  const { formData } = useSelector(authState);  
+  const { formData } = useSelector(authState);
   const dispatch = useDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,14 +31,20 @@ const Account = ({ type }: ComponentProps) => {
     e.preventDefault();
 
     if (type === AccountValue.signIn) {
-      formData.email == null || formData.password == null
-        ? toast.error(FORM_FIELDS_ERROR)
-        : toast.success(FORM_FIELDS_SUCCESS);
+      if (formData.email == null || formData.password == null) {
+        toast.error(FORM_FIELDS_ERROR);
+      } else {
+        dispatch(requestSignIn());
+        toast.success(FORM_FIELDS_SUCCESS);
+      }
     }
     if (type === AccountValue.signUp) {
-      Object.values(formData).some((val) => val === null)
-        ? toast.error(FORM_FIELDS_ERROR)
-        : toast.success(FORM_FIELDS_SUCCESS);
+      if (Object.values(formData).some((val) => val === null)) {
+        toast.error(FORM_FIELDS_ERROR);
+      } else {
+        dispatch(requestSignUp());
+        toast.success(FORM_FIELDS_SUCCESS);
+      }
     }
   };
 

@@ -4,7 +4,7 @@ import { AuthState } from "./types";
 const initialState: AuthState = {
   user: null,
   error: false,
-  errorMessage: "rah makayn erreur",
+  errorMessage: "",
   formData: {
     email: null,
     password: null,
@@ -38,9 +38,17 @@ const authReducer = (state = initialState, action: any) => {
       }
       return state;
     case ActionsTypes.REQUEST_SIGN_IN_SUCCESS:
-      return "";
+      return {
+        ...state,
+        user: action.payload,
+      };
     case ActionsTypes.REQUEST_SIGN_IN_ERROR:
-      return "";
+      return {
+        ...state,
+        error: true,
+        errorMessage: action.payload,
+        user: null,
+      };
     case ActionsTypes.REQUEST_SIGN_UP_SUCCESS:
       return "";
     case ActionsTypes.REQUEST_SIGN_UP_ERROR:

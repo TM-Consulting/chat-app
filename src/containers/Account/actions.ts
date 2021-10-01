@@ -1,11 +1,12 @@
+import { User } from "../../types";
 import { ActionsTypes } from "./constants";
 
-const setFormData = ( payload: {} ) => {
+const setFormData = (payload: {}) => {
   return {
     type: ActionsTypes.SET_FORM_DATA,
-    payload
-  }
-}
+    payload,
+  };
+};
 
 const requestSignIn = () => {
   return {
@@ -13,14 +14,14 @@ const requestSignIn = () => {
   };
 };
 
-const requestSignInSuccess = (payload: {}) => {
+const requestSignInSuccess = (payload: User) => {
   return {
     type: ActionsTypes.REQUEST_SIGN_IN_SUCCESS,
     payload,
   };
 };
 
-const requestSignInError = (payload: {}) => {
+const requestSignInError = (payload: string) => {
   return {
     type: ActionsTypes.REQUEST_SIGN_IN_ERROR,
     payload,
